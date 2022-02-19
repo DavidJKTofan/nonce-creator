@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <h1>Our random string is: <span id="output"></span></h1>
+  </body>
+
+  <footer>
+    <script>
+      var randomString = function (length) {
+        var text = "";
+        var possible =
+          "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890";
+        for (var i = 0; i < length; i++) {
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+      };
+
+      var rs = randomString(15);
+
+      console.log("Our random string is: " + rs);
+      document.getElementById("output").innerHTML = rs;
+    </script>
+  </footer>
+</html>
